@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
+import MarqueeText from 'react-double-marquee';
 
 import { styles } from '../styles/menu'
 import StartGame from './StartGame';
@@ -10,39 +11,43 @@ import { useNavigation } from '@react-navigation/core'
 export default function Menu() {
     const navigation = useNavigation()
     return (
-        <View style={styles.container}>
-            <TouchableOpacity style={styles.buttn}
-                onPress={() => navigation.navigate('StartGame')}
-            >
+        <ImageBackground source={require('../img/main.png')} resizeMode="cover" style={styles.container}>
 
-                <Text>START GAME</Text>
-                <StatusBar style="auto" />
-            </TouchableOpacity>
+            <View >
+                <TouchableOpacity style={styles.buttn}
+                    onPress={() => navigation.navigate('StartGame')}
+                >
 
-
-            <TouchableOpacity style={styles.buttn}
-                onPress={() => navigation.navigate('Settings')}
-            >
-                <Text>SETTINGS</Text>
-                <StatusBar style="auto" />
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.buttn}
-                onPress={() => navigation.navigate('Rules')}
-            >
-                <Text>RULES</Text>
-                <StatusBar style="auto" />
-            </TouchableOpacity>
+                    <Text style={styles.text}>START GAME</Text>
+                    <StatusBar style="auto" />
+                </TouchableOpacity>
 
 
-            <TouchableOpacity style={styles.buttn}
-                onPress={() => navigation.navigate('Developed')}
-            >
+                <TouchableOpacity style={styles.buttn}
+                    onPress={() => navigation.navigate('Settings')}
+                >
+                    <Text style={styles.text}>SETTINGS</Text>
+                    <StatusBar style="auto" />
+                </TouchableOpacity>
 
-                <Text>DEVELOPED</Text>
-                <StatusBar style="auto" />
-            </TouchableOpacity>
-        </View>
+                <TouchableOpacity style={styles.buttn}
+                    onPress={() => navigation.navigate('Rules')}
+                >
+                    <Text style={styles.text}>RULES</Text>
+                    <StatusBar style="auto" />
+                </TouchableOpacity>
+
+
+                <TouchableOpacity style={styles.buttn}
+                    onPress={() => navigation.navigate('Developed')}
+                >
+
+                    <Text style={styles.text}>DEVELOPED</Text>
+                    <StatusBar style="auto" />
+                </TouchableOpacity>
+
+            </View>
+        </ImageBackground>
     );
 }
 
