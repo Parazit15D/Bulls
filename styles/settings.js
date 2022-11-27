@@ -9,15 +9,25 @@ export const styles = StyleSheet.create({
         backgroundColor: '#d2f1fc',
     },
 
+    bttnBlock: {
+        marginTop: 110,
+        marginLeft: 25,
+    },
+
+    textSettings: {
+        textTransform: 'uppercase',
+    },
+
     buttn: {
         margin: 20,
-        width: 180,
+        width: 150,
         alignItems: 'center',
         borderWidth: 1,
         padding: 20,
         borderColor: 'black',
-        backgroundColor: '#d3d3d3',
+        //backgroundColor: 'rgba(214, 177, 107, 0.58)',
+        backgroundColor: 'rgba(194, 214, 215, 0.58)',
         borderRadius: 5,
-        borderColor: '#6579cc',
+
     },
 });
