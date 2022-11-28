@@ -1,3 +1,4 @@
 # Bulls
 
-![Game1](https://user-images.githubusercontent.com/99142122/204365574-4a48fe26-cd4a-4067-9459-e7d26b242948.gif)
+
+![Game1(1)](https://user-images.githubusercontent.com/99142122/204378189-6bcbd567-17e3-49c9-9083-612c5a88deaf.gif)
