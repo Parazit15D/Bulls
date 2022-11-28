@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
         textTransform: 'uppercase',
     },
 
+
     buttn: {
         margin: 20,
         width: 150,

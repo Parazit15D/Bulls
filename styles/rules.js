@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
         backgroundColor: 'rgba(214, 177, 107, 1)',
     },
 
+
     modalText: {
         marginBottom: 17,
         fontSize: 18,

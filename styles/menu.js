@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
         backgroundColor: '#d2f1fc',
     },
 
+
     buttn: {
         margin: 20,
         width: 150,

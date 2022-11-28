@@ -17,7 +17,6 @@ export default function Menu() {
                 <TouchableOpacity style={styles.buttn}
                     onPress={() => navigation.navigate('StartGame')}
                 >
-
                     <Text style={styles.text}>START GAME</Text>
                     <StatusBar style="auto" />
                 </TouchableOpacity>
