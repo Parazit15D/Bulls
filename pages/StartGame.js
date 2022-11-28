@@ -199,13 +199,14 @@ export default function StartGame() {
             <Modal visible={winModal}>
                 <ImageBackground source={require('../img/farm.png')} resizeMode="cover" style={styles.container}>
                     <View style={styles.modalContainer}>
-                        <Text style={{ alignSelf: 'center', fontSize: 24, }}>Ви відгадали загадане число</Text>
-                        <Text style={{ alignSelf: 'center', fontSize: 24, }}>{arrRandCopy}</Text>
+                        <Text style={{ alignSelf: 'center', fontSize: 24, }}>Ви відгадали 😊</Text>
+                        <Text style={{ alignSelf: 'center', fontSize: 24, }}>Загадане число {arrRandCopy}</Text>
                         <View style={{ margin: 20 }}>
                             <TouchableOpacity style={styles.modalButtn}
                                 onPress={() => {
                                     setwinModal(false)
                                     onChangeNumber([])
+                                    navigation.navigate('StartGame')
                                 }
                                 }
                             >
@@ -228,10 +229,10 @@ export default function StartGame() {
             </Modal>
 
             <Modal visible={loseModal}>
-                <ImageBackground source={require('../img/main.png')} resizeMode="cover" style={styles.container}>
+                <ImageBackground source={require('../img/farm.png')} resizeMode="cover" style={styles.container}>
                     <View style={styles.modalContainer}>
-                        <Text style={{ alignSelf: 'center', fontSize: 24, }}>Lose Загадане число</Text>
-                        <Text style={{ alignSelf: 'center', fontSize: 24, }}>{arrRandCopy}</Text>
+                        <Text style={{ alignSelf: 'center', fontSize: 24, }}>Ви не вгадали 😞</Text>
+                        <Text style={{ alignSelf: 'center', fontSize: 24, }}>Загадане число {arrRandCopy}</Text>
                         <View style={{ margin: 20 }}>
                             <TouchableOpacity style={styles.modalButtn}
                                 onPress={() => {
