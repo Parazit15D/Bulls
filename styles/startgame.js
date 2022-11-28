@@ -32,6 +32,10 @@ export const styles = StyleSheet.create({
         elevation: 5
     },
 
+    textButtn: {
+        fontSize: 17,
+    },
+
     modalButtn: {
         width: 180,
         alignItems: 'center',

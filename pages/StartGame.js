@@ -27,22 +27,15 @@ export default function StartGame() {
 
     const navigation = useNavigation()
 
-
-
     function checkValueIsNumberOrNot() {
 
-        //Handler called on button click
         if (isNaN(guessNumber)) {
-            //if input is not a number then here
             alert('В полі повинні бути тількі цифри');
         } else {
-
             In(guessNumber)
         }
 
     }
-
-
 
     // Функція створення рандомного числа.
     function randNumber() {
@@ -74,11 +67,11 @@ export default function StartGame() {
 
     // Функція програшу
     function Lose() {
-
         console.log("LOX")
         chek = false
         setScoreOfItems([])
         setloseModal(true)
+        counter = 0
     }
 
     // Функція перемоги
@@ -86,6 +79,7 @@ export default function StartGame() {
         console.log('WINER')
         setScoreOfItems([])
         setwinModal(true)
+        counter = 0
     }
 
     // Функція запису введеного числа користувачем до масиву. 
@@ -125,6 +119,9 @@ export default function StartGame() {
 
         let temp = 0
 
+        let guess2 = [];
+        let arr = new Array(10).fill(0);
+
         bull = 0
         cow = 0
 
@@ -145,29 +142,25 @@ export default function StartGame() {
         }
 
         else {
-            console.log(gusInput, 'gusInput')
-            for (var i = 0; i < setings; i++) {
-                for (var j = 0; j < setings; j++) {
-                    if (i === j && arrRand[i] === arrPlayer[j]) {
-                        bull++
-                        arrRand[i] = null
-                        arrPlayer[j] = true
-                        console.log(bull, 'bull' + ':' + i + ':' + j)
-                        break
 
-                    }
+
+            for (let i = 0; i < setings; i++) {
+                if (arrRand[i] === arrPlayer[i]) {
+                    bull++;
+                    console.log(bull, 'bull' + ':' + i)
+                }
+                else {
+                    guess2.push(+arrPlayer[i]);
+                    arr[+arrRand[i]]++;
+
                 }
             }
 
-            for (var i = 0; i < setings; i++) {
-                for (var j = 0; j < setings; j++) {
-                    if (i !== j && arrRand[i] === arrPlayer[j]) {
-                        cow++
-                        arrRand[i] = null
-                        arrPlayer[j] = true
-                        console.log(cow, 'cow' + ':' + i + ':' + j)
-                        break
-                    }
+            for (let i = 0; i < setings; i++) {
+                if (arr[guess2[i]] > 0) {
+                    cow++;
+                    arr[guess2[i]]--;
+                    console.log(cow, 'cow' + ':' + i)
                 }
             }
             console.log(bull, 'bull')
@@ -204,62 +197,69 @@ export default function StartGame() {
 
 
             <Modal visible={winModal}>
-                <View style={styles.modalContainer}>
-                    <Text style={{ alignSelf: 'center', fontSize: 24, }}>Ви відгадали загадане число {arrRandCopy}</Text>
-                    <View style={{ margin: 20 }}>
-                        <TouchableOpacity style={styles.modalButtn}
-                            onPress={() => setwinModal(false)}
-                        >
-                            <Text>Restart</Text>
-                            <StatusBar style="auto" />
-                        </TouchableOpacity>
+                <ImageBackground source={require('../img/farm.png')} resizeMode="cover" style={styles.container}>
+                    <View style={styles.modalContainer}>
+                        <Text style={{ alignSelf: 'center', fontSize: 24, }}>Ви відгадали загадане число</Text>
+                        <Text style={{ alignSelf: 'center', fontSize: 24, }}>{arrRandCopy}</Text>
+                        <View style={{ margin: 20 }}>
+                            <TouchableOpacity style={styles.modalButtn}
+                                onPress={() => {
+                                    setwinModal(false)
+                                    onChangeNumber([])
+                                }
+                                }
+                            >
+                                <Text style={styles.textButtn}>Restart</Text>
+                                <StatusBar style="auto" />
+                            </TouchableOpacity>
+                        </View>
+                        <View>
+                            <TouchableOpacity style={styles.modalButtn}
+                                onPress={() => navigation.navigate('Menu')}
+
+                            >
+
+                                <Text style={styles.textButtn}>Menu</Text>
+                                <StatusBar style="auto" />
+                            </TouchableOpacity>
+                        </View>
                     </View>
-                    <View>
-                        <TouchableOpacity style={styles.modalButtn}
-                            onPress={() => navigation.navigate('Menu')}
-
-                        >
-
-                            <Text>Menu</Text>
-                            <StatusBar style="auto" />
-                        </TouchableOpacity>
-                    </View>
-                </View>
-
+                </ImageBackground>
             </Modal>
 
             <Modal visible={loseModal}>
+                <ImageBackground source={require('../img/main.png')} resizeMode="cover" style={styles.container}>
+                    <View style={styles.modalContainer}>
+                        <Text style={{ alignSelf: 'center', fontSize: 24, }}>Lose Загадане число</Text>
+                        <Text style={{ alignSelf: 'center', fontSize: 24, }}>{arrRandCopy}</Text>
+                        <View style={{ margin: 20 }}>
+                            <TouchableOpacity style={styles.modalButtn}
+                                onPress={() => {
+                                    setloseModal(false)
+                                    onChangeNumber([])
+                                }
+                                }
+                            >
+                                <Text style={styles.textButtn}>Restart</Text>
+                                <StatusBar style="auto" />
+                            </TouchableOpacity>
+                        </View>
 
-                <View style={styles.modalContainer}>
-                    <Text style={{ alignSelf: 'center', fontSize: 24, }}>Lose Загадане число {arrRandCopy}</Text>
-                    <View style={{ margin: 20 }}>
-                        <TouchableOpacity style={styles.modalButtn}
-                            onPress={() => setloseModal(false)}
+                        <View>
+                            <TouchableOpacity style={styles.modalButtn}
+                                onPress={() => navigation.navigate('Menu')}
 
-                        >
+                            >
 
-                            <Text>Restart</Text>
-                            <StatusBar style="auto" />
-                        </TouchableOpacity>
+                                <Text style={styles.textButtn}>Menu</Text>
+                                <StatusBar style="auto" />
+                            </TouchableOpacity>
+                        </View>
                     </View>
-
-                    <View>
-                        <TouchableOpacity style={styles.modalButtn}
-                            onPress={() => navigation.navigate('Menu')}
-
-                        >
-
-                            <Text>Menu</Text>
-                            <StatusBar style="auto" />
-                        </TouchableOpacity>
-                    </View>
-
-                </View>
+                </ImageBackground>
             </Modal>
 
             <ImageBackground source={require('../img/farm.png')} resizeMode="cover" style={styles.container}>
-
-
                 <View style={styles.score}>
                     <View style={styles.scoreVisual}>
                         <FlatList data={scoreOfItems} renderItem={({ item }) => (
