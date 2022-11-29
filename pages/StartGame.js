@@ -97,7 +97,7 @@ export default function StartGame() {
                 chek = true
             }
 
-            if (counter > 3) {
+            if (counter >= 3) {
                 counter = 0
                 arrRand.length = 0
                 Lose()
