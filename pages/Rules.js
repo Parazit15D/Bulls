@@ -1,7 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-
-
+import { Text, View } from 'react-native';
 import { styles } from '../styles/rules'
 
 export default function Rules() {

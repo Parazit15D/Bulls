@@ -1,10 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
-import MarqueeText from 'react-double-marquee';
-
+import { Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 import { styles } from '../styles/menu'
-import StartGame from './StartGame';
-
 import { useNavigation } from '@react-navigation/core'
 
 
