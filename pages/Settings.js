@@ -3,8 +3,6 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { styles } from '../styles/settings'
-import { Colors } from 'react-native/Libraries/NewAppScreen';
-
 
 
 export default function Setings() {
