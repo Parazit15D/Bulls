@@ -21,5 +21,4 @@ export const styles = StyleSheet.create({
         fontSize: 24,
         fontFamily: 'display-medium',
     }
-
 });

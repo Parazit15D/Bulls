@@ -15,12 +15,9 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: 'rgba(214, 177, 107, 1)',
     },
-
-
     modalText: {
         marginBottom: 17,
         fontSize: 18,
         fontFamily: 'display-medium',
     }
-
 });

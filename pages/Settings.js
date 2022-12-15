@@ -7,7 +7,6 @@ import { styles } from '../styles/settings'
 
 export default function Setings() {
 
-
     const save = async (item) => {
         try {
             await AsyncStorage.setItem('setings', item);
@@ -17,7 +16,6 @@ export default function Setings() {
             alert(err);
         }
     }
-
 
     return (
         <ImageBackground source={require('../img/setings1.png')} resizeMode="cover" style={styles.container}>

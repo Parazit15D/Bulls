@@ -18,7 +18,6 @@ export const styles = StyleSheet.create({
         textTransform: 'uppercase',
     },
 
-
     buttn: {
         margin: 20,
         width: 150,
@@ -26,7 +25,6 @@ export const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 20,
         borderColor: 'black',
-        //backgroundColor: 'rgba(214, 177, 107, 0.58)',
         backgroundColor: 'rgba(194, 214, 215, 0.58)',
         borderRadius: 5,
 
